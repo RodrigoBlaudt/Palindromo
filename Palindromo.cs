@@ -14,14 +14,14 @@ namespace Palindromo
 
             } while(i.Length != 4);
 
-                if ((i[3] == i[0]) || (i[1] == i[2]))
-                {
-                    Console.WriteLine("The typed string it's a palindrome");
-                }
-                else
-                {
-                    Console.WriteLine("The typed string it's not a palindrome");
-                }
+            if ((i[3] == i[0]) || (i[1] == i[2]))
+            {
+                Console.WriteLine("The typed string it's a palindrome");
+            }
+            else
+            {
+                Console.WriteLine("The typed string it's not a palindrome");
+            }
         }
     }
 }
