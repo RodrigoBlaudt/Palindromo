@@ -8,9 +8,7 @@ namespace Palindromo
         static void Main(string[] args)
         {
 
-            int min;
-            int max;
-            int range;
+            int min, max, range;
             int[] cont = new int[0];
             int j = 0;
 
