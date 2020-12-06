@@ -6,21 +6,41 @@ namespace Palindromo
     {
         static void Main(string[] args)
         {
-            string i;
-            do
-            {
-                Console.WriteLine("Type a string with four characters: ");
-                i = Console.ReadLine();
 
-            } while(i.Length != 4);
+            int min;
+            int max;
+            int range;
+            int[] cont = new int[0];
+            string[] s_array = new string[1000];
+            int j = 0;
 
-            if ((i[3] == i[0]) || (i[1] == i[2]))
+            Console.WriteLine("Type the minimum value with four characters: ");
+            min = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Type the maximum value with four characters: ");
+            max = Convert.ToInt32(Console.ReadLine());
+            
+            range = max-min;
+            cont = new int[range];
+
+            for (int i = min; i < max; i++) 
             {
-                Console.WriteLine("The typed string it's a palindrome");
+                cont[j] = i;
+                cont[j]++;
+                j++;
             }
-            else
+            
+            foreach(var item in cont)
             {
-                Console.WriteLine("The typed string it's not a palindrome");
+                string n = item.ToString();
+
+                if ((n[3] == n[0]) && (n[1] == n[2]))
+                {
+                    Console.WriteLine($"The value: {n} it's a palindrome");
+                }
+                else
+                {
+                    Console.WriteLine($"The value: {n} it's not a palindrome");
+                }
             }
         }
     }
