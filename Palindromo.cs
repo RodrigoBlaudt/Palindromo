@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Palindromo
 {
@@ -11,12 +12,11 @@ namespace Palindromo
             int max;
             int range;
             int[] cont = new int[0];
-            string[] s_array = new string[1000];
             int j = 0;
 
-            Console.WriteLine("Type the minimum value with four characters: ");
+            Console.WriteLine("Type the minimum value: ");
             min = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Type the maximum value with four characters: ");
+            Console.WriteLine("Type the maximum value: ");
             max = Convert.ToInt32(Console.ReadLine());
             
             range = max-min;
@@ -28,18 +28,15 @@ namespace Palindromo
                 cont[j]++;
                 j++;
             }
-            
+        
             foreach(var item in cont)
             {
                 string n = item.ToString();
+                string n_reverse = new string(n.Reverse().ToArray());
 
-                if ((n[3] == n[0]) && (n[1] == n[2]))
+                if (n == n_reverse)
                 {
-                    Console.WriteLine($"The value: {n} it's a palindrome");
-                }
-                else
-                {
-                    Console.WriteLine($"The value: {n} it's not a palindrome");
+                    Console.WriteLine($"The value: {n} it's a palindrome.");
                 }
             }
         }
